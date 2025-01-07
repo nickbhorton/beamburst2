@@ -14,4 +14,4 @@ CMakeUserPresets.json
 build
 .clang*
 compile_commands.json
-
+.cache

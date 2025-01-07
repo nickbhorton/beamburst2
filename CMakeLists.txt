@@ -12,7 +12,7 @@ add_executable(bb2)
 
 target_sources(bb2 PRIVATE src/main.cpp) 
 
-target_include_directories(bb2 PRIVATE src)
+target_include_directories(bb2 PRIVATE src arrayalgebra)
 
 target_link_libraries(bb2 PRIVATE png)
 
