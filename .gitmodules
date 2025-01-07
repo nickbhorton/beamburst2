@@ -1,0 +1,3 @@
+[submodule "arrayalgebra"]
+	path = arrayalgebra
+	url = https://github.com/nickbhorton/arrayalgebra.git
