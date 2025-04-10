@@ -1,18 +1,23 @@
-cmake_minimum_required(VERSION 3.16...3.28)
+cmake_minimum_required(VERSION 3.20)
+set(CMAKE_CXX_STANDARD 20)
+set(CMAKE_CXX_STANDARD_REQUIRED On)
 
-project(BeamBurst2 VERSION 0.0.1 LANGUAGES CXX C)
+project(
+    beamburst2
+    LANGUAGES CXX
+)
 
-find_library(BB2_PNG NAMES png libpng)
-if (DEFINED BB2_PNG)
-    message(STATUS "Found libpng")
-endif()
+add_compile_options(
+    -g
+    -O3
+    -Wall
+    -Werror
+    -Wextra
+)
 
-# main executable
-add_executable(bb2)
+find_package(Git REQUIRED)
+find_package(PNG REQUIRED)
 
-target_sources(bb2 PRIVATE src/main.cpp) 
-
-target_include_directories(bb2 PRIVATE src arrayalgebra)
-
-target_link_libraries(bb2 PRIVATE png)
+add_executable(bb2 src/beamburst2.cpp)
+target_link_libraries(bb2 png)
 
